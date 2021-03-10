@@ -1,5 +1,6 @@
 package service.impl;
 
+import models.airplanemodels.AirplaneType;
 import models.airplanemodels.CargoAirplane;
 import models.airplanemodels.PassengerAirplane;
 import service.AirplaneService;

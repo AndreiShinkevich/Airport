@@ -4,11 +4,15 @@ public abstract class Airplane {
     private String nameAirplane;
     private int rangeOfFlight;
     private int fuelConsumption;
+    AirplaneType airplaneType;
 
     public Airplane(String nameAirplane, int rangeOfFlight, int fuelConsumption) {
         this.nameAirplane = nameAirplane;
         this.rangeOfFlight = rangeOfFlight;
         this.fuelConsumption = fuelConsumption;
+
+
+
     }
 
     public String getNameAirplane() {

@@ -2,18 +2,18 @@ package models.airplanemodels;
 
 public class PassengerAirplane extends Airplane {
 
-    private int airoplanePassengerCapacity;
+    private int airplanePassengerCapacity;
 
-    public PassengerAirplane(String nameAiroplane, int rangeOfFlight, int fuelConsumption, int airoplanePassengerCapacity) {
+    public PassengerAirplane(String nameAiroplane, int rangeOfFlight, int fuelConsumption, int airplanePassengerCapacity) {
         super(nameAiroplane, rangeOfFlight, fuelConsumption);
-        this.airoplanePassengerCapacity=airoplanePassengerCapacity;
+        this.airplanePassengerCapacity =airplanePassengerCapacity;
     }
 
-    public int getAiroplanePassengerCapacity() {
-        return airoplanePassengerCapacity;
+    public int getAirplanePassengerCapacity() {
+        return airplanePassengerCapacity;
     }
 
-    public void setAiroplanePassengerCapacity(int airoplanePassengerCapacity) {
-        this.airoplanePassengerCapacity = airoplanePassengerCapacity;
+    public void setAirplanePassengerCapacity(int airplanePassengerCapacity) {
+        this.airplanePassengerCapacity = airplanePassengerCapacity;
     }
 }

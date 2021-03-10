@@ -7,13 +7,13 @@ public interface AirportService {
 
     Airport createAirport();
 
-    void buyNewAirplane(Airport airoport, Airplane airplane);
+    void buyNewAirplane(Airport airport, Airplane airplane);
 
-    int generalCapacityPassenger(Airport airoport);
+    int generalCapacityPassenger(Airport airport);
 
-    int generalCapacityCargo(Airport airoport);
+    int generalCapacityCargo(Airport airport);
 
-    void sortAiroplaneByDistance(Airport airoport);
+    void sortAirplaneByDistance(Airport airport);
 
-    void cosumptionFuelAiroplane(Airport airoport);
+    void consumptionFuelAirplane(Airport airport);
 }

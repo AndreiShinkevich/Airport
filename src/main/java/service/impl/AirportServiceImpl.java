@@ -1,18 +1,19 @@
 package service.impl;
 
-import models.airplanemodels.AirplaneFactory;
 import models.airplanemodels.AirplaneType;
+import models.airplanemodels.CargoAirplane;
+import models.airplanemodels.PassengerAirplane;
 import models.airportmodels.Airport;
 import models.airplanemodels.Airplane;
 import service.AirportService;
 
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class AirportServiceImpl implements AirportService {
 
-//    private static final Logger log = Logger.getLogger(AirportServiceImpl.class);
+    private static final Logger LOG = Logger.getLogger(AirportServiceImpl.class);
 
     @Override
     public Airport createAirport() {
@@ -28,26 +29,37 @@ public class AirportServiceImpl implements AirportService {
 
     @Override
     public int generalCapacityPassenger(Airport airport) {
-        List<Airplane> list = new ArrayList<>();
-        list = airport.getBaseAirplane();
+        int generalPassenger = 0;
 
-        return 0;
+        for(Airplane airplane : airport.getBaseAirplane()){
+            if(airplane.equals(AirplaneType.PASSENGER))
+                generalPassenger += ((PassengerAirplane) airplane).getAirplanePassengerCapacity();
+        }
+        return generalPassenger;
     }
 
 
 
     @Override
     public int generalCapacityCargo(Airport airport) {
-        return 0;
+        int generalCargo = 0;
+        for(Airplane airplane : airport.getBaseAirplane()){
+            if(airplane.equals(AirplaneType.CARGO))
+                generalCargo += ((CargoAirplane) airplane).getAirplaneCargoCapacity();
+        }
+
+        return generalCargo;
     }
 
     @Override
-    public void sortAiroplaneByDistance(Airport airoport) {
-
+    public void sortAirplaneByDistance(Airport airport) {
+        List<Airplane> airplanes = airport.getBaseAirplane();
+        airplanes.sort(Comparator.comparing(Airplane::getRangeOfFlight));
     }
 
     @Override
-    public void cosumptionFuelAiroplane(Airport airoport) {
+    public void consumptionFuelAirplane(Airport airport) {
+
 
     }
 }
